@@ -1,0 +1,348 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <title>关于苏苏</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <!-----------------Global css------------------>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="vendors/animate/animate.min.css">
+    <link rel="stylesheet" href="vendors/imagehover/css/imagehover.min.css">
+    <link rel="stylesheet" href="vendors/iCheck/css/all.css">
+    <link rel="stylesheet" href="vendors/circliful/css/jquery.circliful.css">
+    <link rel="stylesheet" href="vendors/sweetalert2/css/sweetalert2.min.css">
+    <!-------------------custom css-------------------->
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+<!--------------------Preloader-------------->
+<div class="preloader" style="position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    z-index:100000;
+    backface-visibility: hidden;
+    background: #ffffff;">
+    <div style=" width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-position: center;
+    margin:-25px 0 0 -25px;">
+        <img src="images/loader.gif" alt="loading...">
+    </div>
+</div>
+<!------------------Preloader end------------------->
+
+<header>
+    <div class="container">
+        <nav class="navbar navbar-default">
+            <div class="navbar-header">
+                
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#myMegamenu"><span
+                        class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/g14.png" class="img-responsive" width="60" alt="company-logo">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse navbar-right" id="myMegamenu">
+                <ul class="nav navbar-nav">
+                    <li class="list2"><a href="index.html" class="hvr-underline-from-center">首页</a></li>                 
+                    <li class="list2"><a href="about_us.html" class="hvr-underline-from-center">关于苏苏</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+<!--Login And Register Modal-->
+<!--
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <br>
+            <div class="bs-example bs-example-tabs">
+                <ul id="myTab" class="nav nav-tabs ">
+                    <li id="signin_tab" class="active"><a href="#signin" data-toggle="tab">Sign In</a></li>
+                    <li id="reg_tab"><a href="#signup" data-toggle="tab">Register</a></li>
+                </ul>
+            </div>
+            <div class="modal-body">
+                <div id="myTabContent" class="tab-content">
+                    <div class=" signin tab-pane fade active in" id="signin">
+                        <form class="form-horizontal">
+                            <fieldset>
+                                <div class="control-group section-top-10">
+                                    <label class="control-label" for="userid"><span
+                                            class="glyphicon glyphicon-user text-primary"></span> User Id :</label>
+                                    <div class="controls">
+                                        <input id="userid" name="userid" type="text" class="form-control input-medium"
+                                               placeholder="user Id" required>
+                                    </div>
+                                </div>
+                                <div class="control-group section-top-10">
+                                    <label class="control-label" for="passwordinput"><span
+                                            class="glyphicon glyphicon-eye-open text-primary"></span> Password :</label>
+                                    <div class="controls">
+                                        <input type="password" id="passwordinput" name="passwordinput"
+                                               class="form-control input-medium" placeholder="Password" required>
+                                    </div>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="checkbox" class="blue">Remember me</label>
+                                </div>
+                                <div class="control-group">
+                                    <div class="controls section-top-10">
+                                        <button id="signin_btn" name="signin" class="btn btn-success form-control">Sign
+                                            In
+                                        </button>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="tab-pane fade signup" id="signup">
+                        <form class="form-horizontal">
+                            <fieldset>
+                                <div class="control-group section-top-10">
+                                    <label for="user"><span class="glyphicon glyphicon-user text-primary"></span> Name
+                                        :</label>
+                                    <div class="controls">
+                                        <input id="user" name="userid" class="form-control input-large" type="text"
+                                               placeholder="Name" required="">
+                                    </div>
+                                </div>
+                                <div class="control-group section-top-10">
+                                    <label class="control-label" for="Email_id"><span
+                                            class="glyphicon glyphicon-envelope text-primary"></span> Email :</label>
+                                    <div class="controls">
+                                        <input id="Email_id" name="Email" class="form-control input-large" type="email"
+                                               placeholder="abcdef@xyz.com" required>
+                                    </div>
+                                </div>
+                                <div class="control-group section-top-10">
+                                    <label for="password"><span
+                                            class="glyphicon glyphicon-eye-open text-primary"></span>
+                                        Password :</label>
+                                    <div class="controls">
+                                        <input id="password" name="password" class="form-control input-large"
+                                               type="password" placeholder="Password" required>
+
+                                    </div>
+                                </div>
+                                <div class="control-group section-top-10">
+                                    <label class="control-label" for="reenterpassword"><span
+                                            class="glyphicon glyphicon-repeat text-primary"></span> Re-Enter Password :</label>
+                                    <div class="controls">
+                                        <input id="reenterpassword" class="form-control input-large"
+                                               name="reenterpassword" type="password" placeholder="Re Enter Password"
+                                               required="">
+                                    </div>
+                                </div>
+                                <div class="control-group section-top-10">
+                                    <label class="control-label" for="confirmsignup"></label>
+                                    <div class="controls">
+                                        <button id="confirmsignup" name="confirmsignup"
+                                                class="btn btn-success form-control">Sign Up
+                                        </button>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+-->
+<!--Login And Register Modal-->
+<!--------------About section---------->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3 text-center m-t-50">
+            <h2 class="text-center heading underline">关于苏苏</h2>
+            <p>欢迎进入新世界--苏苏1.0.0，这是你没有体验过的船新版本。。。<br>说到船新版本，我就想到了中美合拍。。。下半年。。。开花。。。支持
+            </p>
+        </div>
+    </div>
+    <div class="row m-t-50">
+        <div class="col-sm-5">
+            <img src="images/1.jpg" class="img-responsive" alt="about_image">
+            <br/>
+        </div>
+        <div class="col-sm-7">
+            <div class="row">
+                <div class="col-xs-12 text-justify">
+                    <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    写点啥呢。。。写点啥呢。。。写点啥呢。。。写点啥呢。。。写点啥呢。。。写点啥呢。。。写点啥呢。。。写点啥呢。。。写点啥呢。。。写点啥呢。。。写点啥呢。。。写点啥呢。。。写点啥呢。。。写点啥呢。。。</p>
+
+                    <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    不知道呀。。。不知道呀。。。不知道呀。。。不知道呀。。。不知道呀。。。不知道呀。。。不知道呀。。。不知道呀。。。不知道呀。。。不知道呀。。。不知道呀。。。不知道呀。。。不知道呀。。。不知道呀。。。</p>
+
+                    <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    经常有小朋友过来问我，洛必达法则到底有几个条件啊？我看有些教材，洛必达竟然和拉格朗日谈起了恋爱，洛必达叫拉格朗日叫日日，拉格朗日叫洛必达叫达达，求导不分，积分颠倒。这样的教材主创人员是要向全国人民谢罪的！</p>
+
+                    <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    微分不是积分，极值不是最值。有时候泰勒展开比洛必达公式好用，我用泰勒从28项展开到82项，我太了解他了！我们说一个数学考试没有自己的公式是可悲的，有了公式还不去用就是可耻的。年轻的考生还在笑，我是笑不出来。</p>
+
+                    <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    有的考生一看到题，第一反应“哇，太难了！”这怎么行呢？见到难题，尤其需要乐观向上。有些考生竟然还带了两张准考证，结果一进考场就被拦下来了。</p>
+
+                    <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    你说你高数比我好，有本事上台比划比划。我是身经百战见得多了，我研究了十七年的高数，每年稿费不到70元，十七年下来不到2000元。我说高数题目你一题都没有做过的请举手，结果没有一个人举手，什么叫做国际考试啊？（后仰）</p>
+
+                    <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    今年下半年，中美合卷的高数考试正在命题中，我继续担任出题人，希望大家多多关注！</p>
+
+                    <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    开花！！！开花！！！开花！！！开花！！！开花！！！开花！！！开花！！！开花！！！开花！！！开花！！！开花！！！开花！！！开花！！！开花！！！开花！！！开花！！！开花！！！开花！！！开花！！！开花！！！开花！！！</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-------------About section end-->
+<!-------------What We do--------->
+<section class="circle_section parallax m-t-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3 m-t-50">
+                <h2 class="heading2 underline2 text-white text-center">检测更新</h2>
+                <p class="text-center text-white">苏苏1.0.0版本较low，敬请期待</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="row circliful_custom">
+                    <div class="col-sm-4 col-xs-12">
+                        <div id="test-circle"></div>
+                        <h4 class="text-center text-white">passion</h4>
+                    </div>
+                    <div class="col-sm-4 col-xs-12">
+                        <div id="test-circle1"></div>
+                        <h4 class="text-center text-white">creativity</h4>
+                    </div>
+                    <div class="col-sm-4 col-xs-12 section-bottom-pad-40">
+                        <div id="test-circle2"></div>
+                        <h4 class="text-center text-white">technology</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br/><br/>
+</section>
+<!------------- What We do end--------->
+<!-----------------we promise -------------->
+<!--
+<section class="m-t-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <h2 class="heading underline">We Promise</h2>
+                <p class="text-center">praesentium voluptatum
+                    deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-7 section-top-40">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="about_col_space">
+                            <div class="row profile1">
+                                <div class="col-md-3 col-sm-3 col-xs-3 section-top-20">
+                                    <img src="images/responsible-energy-use.png" class="img-responsive"
+                                         alt="about_icons">
+                                </div>
+
+                                <div class="profile_data col-md-9 col-sm-9 col-xs-9 section-top-20">
+                                    <a href="about_us.html"><h5 class="profile_data">Responsibility</h5></a>
+                                    <p class="profile_data">Lorem ipsum dolor sit amet consectetuer adipiscing elit..
+                                        <br/><a href="about_us.html" class="text-success">
+                                            Read more</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="about_col_space">
+                            <div class="row profile1">
+                                <div class="col-md-3  col-xs-3 section-top-20">
+                                    <img src="images/global.png" class="img-responsive" alt="about_icons">
+                                </div>
+                                <div class="profile_data col-md-9  col-xs-9 section-top-20">
+                                    <a href="about_us.html"><h5 class="profile_data">Global Alliances</h5></a>
+                                    <p class="profile_data">Lorem ipsum dolor sit amet consectetuer adipiscing elit..
+                                        <br/><a href="about_us.html" class="text-success">
+                                            Read more</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="about_col_space">
+                            <div class="row profile1">
+                                <div class="col-md-3  col-xs-3 section-top-20">
+                                    <img src="images/diversity.png" class="img-responsive" alt="about_icons">
+                                </div>
+                                <div class="profile_data col-md-9  col-xs-9 section-top-20">
+                                    <a href="about_us.html"><h5 class="profile_data">Diversity</h5></a>
+                                    <p class="profile_data">Lorem ipsum dolor sit amet consectetuer adipiscing elit..
+                                        <br/><a href="about_us.html" class="text-success">
+                                            Read more</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="about_col_space">
+                            <div class="row profile1">
+                                <div class="col-md-3 col-sm-3 col-xs-3 section-top-20">
+                                    <img src="images/leadrship.png" class="img-responsive" alt="about_icons">
+                                </div>
+                                <div class="profile_data col-md-9 col-sm-9 col-xs-9 section-top-20">
+                                    <a href="about_us.html"><h5 class="profile_data"> Leadership</h5></a>
+                                    <p class="profile_data">Lorem ipsum dolor sit amet consectetuer adipiscing elit..
+                                        <br/><a href="about_us.html" class="text-success">
+                                            Read more</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <img src="images/index3_1.png" alt="boyimg" class="img-responsive">
+            </div>
+        </div>
+
+    </div>
+</section>
+-->
+<!------------------Copy rights End------------------>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="vendors/iCheck/js/icheck.js"></script>
+<script src="vendors/isotope/js/isotope.pkgd.min.js"></script>
+<script src="vendors/countup/js/countUp.min.js"></script>
+<script src="vendors/circliful/js/jquery.circliful.min.js"></script>
+<script src="vendors/jribbble/js/jribbble.min.js"></script>
+<script src="vendors/sweetalert2/js/sweetalert2.min.js"></script>
+<!----------------Page Level JS-------------------->
+<script src="js/custom.js"></script>
+
+</body>
+</html>
